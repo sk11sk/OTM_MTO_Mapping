@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 @Component
@@ -107,42 +104,54 @@ public class TestRunner implements CommandLineRunner {
 //
 
 // mapping concept   best way
-        // third  student pranit  final best // cascade effect  need not the save books(child entity )  using book repository  just add books to
-        // student object (parent object )
-        // and  save student object using  student repository  thats it it is cascade.All
-
-        Student student2 = new Student();
-        student2.setSname("pranit");      // set parent object
+        // third  student pranit  final best
 
 
+        Student student = new Student();
+        student.setSname("pranit");
 
-        Book book8= new Book();
+        studentRepository.save(student);  // save parent object
 
-        book8.setBnamae("Biography");  // set child object
+        Book book1= new Book();
 
-
-        Book book9 = new Book();
-
-        book9.setBnamae(" biology book");   // set child object
-
-
-        Book book10 = new Book();
-        book10.setBnamae("maths book");  // set child object
+        book1.setBname("Biography");  // set child object
 
 
-        Book book11 = new Book();
-        book11.setBnamae(" physics book");   // set child object
+        Book book2 = new Book();
+
+        book2.setBname(" biology book");   // set child object
 
 
-        ArrayList<Book> books = new ArrayList<>();
-        books.add(book8);
-        books.add(book9);
-        books.add(book10);
-        books.add(book11);
+        Book book3= new Book();
+        book3.setBname("maths book");  // set child object
 
-        student2.setBook(books);  // set child   object  to  the parent object// parent object.set (list of books)
 
-        studentRepository.save(student2);  // save parent object .
+        Book book4 = new Book();
+        book4.setBname(" physics book");   // set child object
+
+
+
+
+        List<Book> books = new ArrayList<>();
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        books.add(book4);
+
+
+        student.setBook(books); //parent object.set (list of books) // set child   object  to  the parent object//
+
+        book1.setStudent(student);     // child object.set ( parent object )
+        book2.setStudent(student);
+        book3.setStudent(student);
+        book4.setStudent(student);
+
+
+   bookRepository.save(book1);
+   bookRepository.save(book2);     // save child object to database
+   bookRepository.save(book3);     // save child object to database
+   bookRepository.save(book4);     // save child object to database
+
 
 
 

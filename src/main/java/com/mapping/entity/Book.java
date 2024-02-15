@@ -15,12 +15,18 @@ public class Book { // parent entity
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int bid;
-    private  String bnamae;
+    private  String bname;
 
     @ManyToOne
-    @JoinColumn(name  = "siddFK") // it will create another column as sidFK // it will join  primary key of  class student as a foreign key in  the table Book
+    @JoinColumn(name  = "sidFK") // it will create another column as sidFK // it will join  primary key of  class student as a foreign key in  the table Book
     private Student student;
 
 
 
 }
+
+
+
+
+
+
