@@ -22,7 +22,7 @@ public class Student {
     private  String sname ;
 
 
-    @OneToMany(mappedBy = "student",cascade =CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "student",cascade =CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
     private List<Book> book;
 
     // one student has many book
