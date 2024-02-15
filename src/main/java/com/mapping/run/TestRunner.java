@@ -139,7 +139,7 @@ public class TestRunner implements CommandLineRunner {
         books.add(book4);
 
 
-        student.setBook(books); //parent object.set (list of books) // set child   object  to  the parent object//
+        student.setBook(books); //parent object.set (child object ) here it is (list of books)
 
         book1.setStudent(student);     // child object.set ( parent object )
         book2.setStudent(student);
