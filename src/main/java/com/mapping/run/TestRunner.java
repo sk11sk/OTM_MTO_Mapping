@@ -138,8 +138,9 @@ public class TestRunner implements CommandLineRunner {
         books.add(book3);
         books.add(book4);
 
+// cascade  = cascade = CascadeType.ALL// no need to save  parent object.set(child object )
 
-        student.setBook(books); //parent object.set (child object ) here it is (list of books)
+//        student.setBook(books); //parent object.set (child object ) here it is (list of books)
 
         book1.setStudent(student);     // child object.set ( parent object )
         book2.setStudent(student);
