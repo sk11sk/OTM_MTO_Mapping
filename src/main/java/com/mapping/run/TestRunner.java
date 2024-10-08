@@ -132,11 +132,11 @@ public class TestRunner implements CommandLineRunner {
 
 
 
-        List<Book> books = new ArrayList<>();
-        books.add(book1);
-        books.add(book2);
-        books.add(book3);
-        books.add(book4);
+        // List<Book> books = new ArrayList<>();
+        // books.add(book1);
+        // books.add(book2);
+        // books.add(book3);
+        // books.add(book4);
 
 // cascade  = cascade = CascadeType.ALL// no need to save  parent object.set(child object )
 
